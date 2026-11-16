@@ -163,11 +163,28 @@
 
       <div class="stage-wrapper">
         <div class="stage-3d-box" id="stage-3d-box">
-          <span class="stage-badge-3d">3D STUDIO STAGE</span>
-          <span class="stage-hint">🖱️ Di chuột để xoay góc 3D</span>
-          <div class="stage-car-wrap" id="stage-car-wrap">
-            <img id="stage-car-img" src="assets/images/cars/vinfast-vf-7.webp" alt="Mô hình 3D xe VinFast" />
+          <span class="stage-badge-3d">4D STUDIO 360°</span>
+          <span class="stage-hint">🖱️ Kéo chuột xoay 360°</span>
+
+          <div class="stage-mode-switch">
+            <button type="button" class="mode-btn active" id="btn-mode-4d">🔄 Mô hình 4D 360°</button>
+            <button type="button" class="mode-btn" id="btn-mode-img">📸 Ảnh thực tế</button>
           </div>
+
+          <div id="stage-4d-container" class="stage-4d-container"></div>
+
+          <div class="stage-car-wrap" id="stage-car-wrap" style="display:none;">
+            <img id="stage-car-img" src="assets/images/cars/vinfast-vf-7.webp" alt="Mô hình 4D xe VinFast" />
+          </div>
+
+          <div class="stage-angles" id="stage-angles">
+            <button type="button" class="angle-btn active" data-angle="iso">Góc 3/4</button>
+            <button type="button" class="angle-btn" data-angle="front">Đầu xe</button>
+            <button type="button" class="angle-btn" data-angle="side">Thân xe</button>
+            <button type="button" class="angle-btn" data-angle="rear">Đuôi xe</button>
+            <button type="button" class="angle-btn" id="btn-auto-spin" data-angle="spin">⏸️ Tự xoay</button>
+          </div>
+
           <div class="stage-pedestal"></div>
         </div>
 
@@ -427,7 +444,10 @@
     <a href="https://zalo.me/0982068820" target="_blank" rel="noopener" class="float-btn float-zalo">💬 Zalo Mr. Tùng</a>
   </div>
 
-  <script src="js/cars-data.js?v=20261116"></script>
-  <script src="js/script.js?v=20261116"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="js/cars-data.js?v=20261117"></script>
+  <script src="js/stage4d.js?v=20261117"></script>
+  <script src="js/script.js?v=20261117"></script>
 </body>
 </html>
