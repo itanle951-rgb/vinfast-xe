@@ -163,34 +163,17 @@
 
       <div class="stage-wrapper">
         <div class="stage-3d-box" id="stage-3d-box">
-          <span class="stage-badge-3d">4D STUDIO 360°</span>
-          <span class="stage-hint">🖱️ Kéo chuột xoay 360°</span>
-
-          <div class="stage-mode-switch">
-            <button type="button" class="mode-btn active" id="btn-mode-4d">🔄 Mô hình 4D 360°</button>
-            <button type="button" class="mode-btn" id="btn-mode-img">📸 Ảnh thực tế</button>
+          <span class="stage-badge-3d">4D STUDIO SHOWROOM</span>
+          <span class="stage-hint">🖱️ Di chuột để xoay góc nhìn 4D</span>
+          <div class="stage-car-wrap" id="stage-car-wrap">
+            <img id="stage-car-img" src="assets/images/cars/vinfast-vf-7.webp" alt="Xe VinFast 4D Studio" />
           </div>
-
-          <div id="stage-4d-container" class="stage-4d-container"></div>
-
-          <div class="stage-car-wrap" id="stage-car-wrap" style="display:none;">
-            <img id="stage-car-img" src="assets/images/cars/vinfast-vf-7.webp" alt="Mô hình 4D xe VinFast" />
-          </div>
-
-          <div class="stage-angles" id="stage-angles">
-            <button type="button" class="angle-btn active" data-angle="iso">Góc 3/4</button>
-            <button type="button" class="angle-btn" data-angle="front">Đầu xe</button>
-            <button type="button" class="angle-btn" data-angle="side">Thân xe</button>
-            <button type="button" class="angle-btn" data-angle="rear">Đuôi xe</button>
-            <button type="button" class="angle-btn" id="btn-auto-spin" data-angle="spin">⏸️ Tự xoay</button>
-          </div>
-
           <div class="stage-pedestal"></div>
         </div>
 
         <div class="stage-controls">
           <label for="stage-car-select" style="display:block;font-size:0.85rem;color:#94a3b8;margin-bottom:8px;font-weight:700;">
-            CHỌN DÒNG XE TRƯNG BÀY 3D:
+            CHỌN DÒNG XE TRƯNG BÀY 4D:
           </label>
           <select id="stage-car-select" class="stage-selector"></select>
 
@@ -212,7 +195,7 @@
           </div>
 
           <div style="font-size:0.85rem;color:#cbd5e1;font-weight:600;">
-            Thử sắc thái ánh sáng Studio 3D:
+            Thử sắc thái ánh sáng Studio 4D:
           </div>
           <div class="color-swatches">
             <button type="button" class="swatch-btn active" style="background:#1464f4;" data-filter="none" title="Xanh VinFast Nguyên Bản"></button>
@@ -444,10 +427,7 @@
     <a href="https://zalo.me/0982068820" target="_blank" rel="noopener" class="float-btn float-zalo">💬 Zalo Mr. Tùng</a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="js/cars-data.js?v=20261117"></script>
-  <script src="js/stage4d.js?v=20261117"></script>
   <script src="js/script.js?v=20261117"></script>
 </body>
 </html>

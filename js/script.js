@@ -201,9 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (stageCarNedc) stageCarNedc.textContent = `NEDC: ${activeStageCar.nedc}`;
     if (stageCarPrice) stageCarPrice.textContent = activeStageCar.priceText;
     if (stageCarInstallment) stageCarInstallment.textContent = activeStageCar.installmentText;
-    if (window.VinFastStage4D) {
-      window.VinFastStage4D.setCar(activeStageCar.id);
-    }
   }
 
   updateStageUI();
@@ -219,61 +216,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Chuyển chế độ Mô hình 4D 360° <-> Ảnh thực tế & Nút chọn góc nhìn
-  const stage4dContainer = document.getElementById("stage-4d-container");
-  const btnMode4d = document.getElementById("btn-mode-4d");
-  const btnModeImg = document.getElementById("btn-mode-img");
-  const stageAngles = document.getElementById("stage-angles");
-  const angleBtns = document.querySelectorAll(".angle-btn[data-angle]");
-  const btnAutoSpin = document.getElementById("btn-auto-spin");
-
-  if (btnMode4d && btnModeImg && stage4dContainer && stageCarWrap) {
-    btnMode4d.addEventListener("click", () => {
-      btnMode4d.classList.add("active");
-      btnModeImg.classList.remove("active");
-      stage4dContainer.style.display = "block";
-      stageCarWrap.style.display = "none";
-      if (stageAngles) stageAngles.style.display = "flex";
-      if (window.VinFastStage4D) window.VinFastStage4D.resize();
+  // Hiệu ứng 4D nghiêng theo chuột & ánh sáng studio trên ảnh thực tế
+  if (stageBox && stageCarWrap) {
+    stageBox.addEventListener("mousemove", (e) => {
+      const rect = stageBox.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      stageCarWrap.style.transform = `rotateY(${x * 26}deg) rotateX(${-y * 12}deg) scale(1.05)`;
     });
-
-    btnModeImg.addEventListener("click", () => {
-      btnModeImg.classList.add("active");
-      btnMode4d.classList.remove("active");
-      stage4dContainer.style.display = "none";
-      stageCarWrap.style.display = "block";
-      if (stageAngles) stageAngles.style.display = "none";
+    stageBox.addEventListener("mouseleave", () => {
+      stageCarWrap.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
     });
   }
 
-  angleBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const ang = btn.dataset.angle;
-      if (ang === "spin") {
-        if (window.VinFastStage4D) {
-          const isSpinning = window.VinFastStage4D.toggleSpin();
-          btn.textContent = isSpinning ? "⏸️ Tự xoay" : "▶️ Tự xoay";
-        }
-        return;
-      }
-      angleBtns.forEach((b) => { if (b.dataset.angle !== "spin") b.classList.remove("active"); });
-      btn.classList.add("active");
-      if (window.VinFastStage4D) window.VinFastStage4D.setAngle(ang);
-    });
-  });
-
-  // Đổi màu sơn 4D & ánh sáng studio
-  const swatchColors = ["#1464f4", "#0f172a", "#e2e8f0", "#dc2626", "#10b981"];
-  swatches.forEach((btn, idx) => {
+  // Đổi sắc thái ánh sáng Studio 4D
+  swatches.forEach((btn) => {
     btn.addEventListener("click", () => {
       swatches.forEach((s) => s.classList.remove("active"));
       btn.classList.add("active");
       const filterCss = btn.dataset.filter || "none";
       if (stageCarImg) {
         stageCarImg.style.filter = `${filterCss} drop-shadow(0 28px 26px rgba(0, 0, 0, 0.65))`;
-      }
-      if (window.VinFastStage4D && swatchColors[idx]) {
-        window.VinFastStage4D.setColor(swatchColors[idx]);
       }
     });
   });
