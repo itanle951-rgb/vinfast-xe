@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Hiệu ứng 3D Parallax cho Hero Showcase
+  // 2. Hiệu ứng 3D Parallax & Slider 4D cho Hero Showcase
   const heroVisual = document.querySelector(".hero-visual");
   const heroFrame = document.querySelector(".hero-3d-frame");
   if (heroVisual && heroFrame) {
@@ -30,6 +30,47 @@ document.addEventListener("DOMContentLoaded", () => {
     heroVisual.addEventListener("mouseleave", () => {
       heroFrame.style.transform = "rotateY(0deg) rotateX(0deg)";
     });
+  }
+
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".slider-dot");
+  const prevBtn = document.getElementById("slider-prev");
+  const nextBtn = document.getElementById("slider-next");
+  const sliderTitle = document.getElementById("slider-title");
+  const slideTitles = [
+    "VinFast VF 8 — SUV Điện Hạng Sang",
+    "VinFast VF 9 — Flagship 7 Chỗ Đẳng Cấp",
+    "VinFast VF 7 — Crossover Thể Thao Cá Tính",
+    "VinFast VF Wild — Bán Tải Điện Đột Phá"
+  ];
+  let currentSlide = 0;
+  let slideTimer = null;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle("active", i === currentSlide));
+    dots.forEach((d, i) => d.classList.toggle("active", i === currentSlide));
+    if (sliderTitle && slideTitles[currentSlide]) {
+      sliderTitle.textContent = slideTitles[currentSlide];
+    }
+  }
+
+  function startAutoSlide() {
+    if (slideTimer) clearInterval(slideTimer);
+    slideTimer = setInterval(() => showSlide(currentSlide + 1), 4500);
+  }
+
+  if (slides.length) {
+    if (prevBtn) prevBtn.addEventListener("click", () => { showSlide(currentSlide - 1); startAutoSlide(); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { showSlide(currentSlide + 1); startAutoSlide(); });
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        showSlide(Number(dot.dataset.index || 0));
+        startAutoSlide();
+      });
+    });
+    startAutoSlide();
   }
 
   // 3. Render Danh Mục 14 Dòng Xe & Lọc Theo Tab
