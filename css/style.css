@@ -256,12 +256,14 @@ textarea {
   flex-shrink: 0;
 }
 
-.brand-logo-svg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1.5px solid #d4af37;
+  object-fit: cover;
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.28));
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
 }
 
 .brand-text {
