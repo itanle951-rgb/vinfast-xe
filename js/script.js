@@ -174,7 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const stageCarInstallment = document.getElementById("stage-car-installment");
   const stageCarSelect = document.getElementById("stage-car-select");
   const stageCalcBtn = document.getElementById("stage-calc-btn");
-  const swatches = document.querySelectorAll(".swatch-btn");
+  const swatchesWrap = document.getElementById("stage-color-swatches");
+  const stageColorName = document.getElementById("stage-color-name");
 
   let activeStageCar = VINFAST_CARS.find((c) => c.id === "vf-7") || VINFAST_CARS[0];
 
@@ -193,6 +194,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function renderStageSwatches(car) {
+    if (!swatchesWrap) return;
+    const colors = car.colors && car.colors.length ? car.colors : [{ name: "Tiêu chuẩn hãng", hex: "#1464f4", img: car.img }];
+    swatchesWrap.innerHTML = colors
+      .map((col, idx) => {
+        const bg = col.hex2 ? `linear-gradient(135deg, ${col.hex2} 45%, ${col.hex} 46%)` : col.hex;
+        return `<button type="button" class="swatch-btn ${idx === 0 ? "active" : ""}" style="background:${bg};" data-idx="${idx}" title="${col.name}"></button>`;
+      })
+      .join("");
+
+    if (stageColorName) stageColorName.textContent = colors[0].name;
+    if (stageCarImg) {
+      stageCarImg.style.filter = "drop-shadow(0 28px 26px rgba(0, 0, 0, 0.65))";
+      stageCarImg.src = colors[0].img;
+    }
+
+    swatchesWrap.querySelectorAll(".swatch-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const col = colors[Number(btn.dataset.idx || 0)];
+        if (!col) return;
+        swatchesWrap.querySelectorAll(".swatch-btn").forEach((s) => s.classList.remove("active"));
+        btn.classList.add("active");
+        if (stageCarImg) stageCarImg.src = col.img;
+        if (stageColorName) stageColorName.textContent = col.name;
+      });
+    });
+  }
+
   function updateStageUI() {
     if (!activeStageCar) return;
     if (stageCarImg) stageCarImg.src = activeStageCar.img;
@@ -201,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (stageCarNedc) stageCarNedc.textContent = `NEDC: ${activeStageCar.nedc}`;
     if (stageCarPrice) stageCarPrice.textContent = activeStageCar.priceText;
     if (stageCarInstallment) stageCarInstallment.textContent = activeStageCar.installmentText;
+    renderStageSwatches(activeStageCar);
   }
 
   updateStageUI();
@@ -228,18 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
       stageCarWrap.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
     });
   }
-
-  // Đổi sắc thái ánh sáng Studio 4D
-  swatches.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      swatches.forEach((s) => s.classList.remove("active"));
-      btn.classList.add("active");
-      const filterCss = btn.dataset.filter || "none";
-      if (stageCarImg) {
-        stageCarImg.style.filter = `${filterCss} drop-shadow(0 28px 26px rgba(0, 0, 0, 0.65))`;
-      }
-    });
-  });
 
   // 5. Máy Tính Giá Lăn Bánh Hà Nội & Trả Góp 85%
   const calcCarSelect = document.getElementById("calc-car");

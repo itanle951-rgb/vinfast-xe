@@ -1,4 +1,4 @@
-// Dữ liệu 14 dòng xe VinFast tham chiếu từ otovinfast-hanoi.com
+// Dữ liệu 14 dòng xe VinFast + Bảng màu ngoại thất chính hãng từ vinfastauto.com/vn_vi
 // Dự án: Showroom VinFast Hà Nội - Số 1 Nguyễn Văn Linh (Mr. Tùng - 0982.068.820)
 
 const VINFAST_CARS = [
@@ -13,10 +13,18 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 16.740.000 ₫",
     nedc: "210 km",
     seats: "4 chỗ",
-    img: "assets/images/cars/vinfast-vf-3.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-vang-desktop.webp",
     badge: "Bán chạy nhất",
-    highlight: true,
-    desc: "Mẫu Mini-SUV đô thị nhỏ gọn, linh hoạt trong phố Hà Nội, chi phí vận hành siêu tiết kiệm."
+    desc: "Mẫu Mini-SUV đô thị nhỏ gọn, linh hoạt trong phố Hà Nội, chi phí vận hành siêu tiết kiệm.",
+    colors: [
+      { name: "Vàng Nóc Trắng (Summer Yellow)", hex: "#eab308", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-vang-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-trang-desktop.webp" },
+      { name: "Xám (Zenith Grey)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-xam-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-do-desktop.webp" },
+      { name: "Xanh Dương Nóc Trắng", hex: "#2563eb", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-xanh-duong-desktop.webp" },
+      { name: "Hồng Phấn Nóc Trắng", hex: "#f472b6", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-hong-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf3/hinh-anh-vinfast-vf3-ngoai-that-mau-xanh-urban-desktop.webp" }
+    ]
   },
   {
     id: "vf-5",
@@ -29,10 +37,17 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 43.740.000 ₫",
     nedc: "326 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/vinfast-vf-5.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-xanh-duong-desktop.webp",
     badge: "Quốc dân",
-    highlight: false,
-    desc: "SUV hạng A bán chạy hàng đầu, thiết kế trẻ trung, phù hợp gia đình trẻ và chạy dịch vụ."
+    desc: "SUV hạng A bán chạy hàng đầu, thiết kế trẻ trung, phù hợp gia đình trẻ và chạy dịch vụ.",
+    colors: [
+      { name: "Xanh Dương Nóc Trắng", hex: "#1d4ed8", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-xanh-duong-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-trang-desktop.webp" },
+      { name: "Xám (Zenith Grey)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-xam-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-do-desktop.webp" },
+      { name: "Vàng Nóc Đen", hex: "#eab308", hex2: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-vang-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf5/hinh-anh-vinfast-vf5-ngoai-that-mau-xanh-urban-desktop.webp" }
+    ]
   },
   {
     id: "vf-6",
@@ -45,10 +60,16 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 57.060.000 ₫",
     nedc: "381 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/vinfast-vf-6.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-vinfast-vf6-mau-do-desktop.webp",
     badge: "Gia đình",
-    highlight: false,
-    desc: "B-SUV đậm chất châu Âu do Torino Design chấp bút, trang bị trợ lý ảo và ADAS thông minh."
+    desc: "B-SUV đậm chất châu Âu do Torino Design chấp bút, trang bị trợ lý ảo và ADAS thông minh.",
+    colors: [
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-vinfast-vf6-mau-do-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-xe-vinfast-vf6-mau-trang-02-desktop.webp" },
+      { name: "Xám Bạc (Zenith Grey)", hex: "#94a3b8", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-xe-vinfast-vf6-mau-bac-02-desktop.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-xe-vinfast-vf6-mau-den-02-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf6/hinh-anh-vinfast-vf6-mau-xanh-mint-desktop.webp" }
+    ]
   },
   {
     id: "vf-7",
@@ -61,10 +82,16 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 65.250.000 ₫",
     nedc: "431 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/vinfast-vf-7.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-den-desktop.webp",
     badge: "Thể thao",
-    highlight: true,
-    desc: "C-SUV thiết kế phi đối xứng cá tính, công suất mạnh mẽ, nội thất hướng người lái."
+    desc: "C-SUV thiết kế phi đối xứng cá tính, công suất mạnh mẽ, nội thất hướng người lái.",
+    colors: [
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-den-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-trang-desktop.webp" },
+      { name: "Xám (Zenith Grey)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-xam-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-do-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf7/hinh-anh-vinfast-vf7-mau-xanh-mint-desktop.webp" }
+    ]
   },
   {
     id: "vf-8",
@@ -77,10 +104,15 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 61.530.000 ₫",
     nedc: "500 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/new-vinfast-vf-8.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/VF-8/hinh-anh-xe-VinFast-vf8-ngoai-that-mau-xanh-reu-01.webp",
     badge: "Thế hệ mới",
-    highlight: true,
-    desc: "D-SUV cao cấp dẫn động 2 cầu toàn thời gian, không gian rộng rãi chuẩn doanh nhân."
+    desc: "D-SUV cao cấp dẫn động 2 cầu toàn thời gian, không gian rộng rãi chuẩn doanh nhân.",
+    colors: [
+      { name: "Xanh Rêu (Ivy Green)", hex: "#14532d", img: "https://static-cms-prod.vinfastauto.com/statics/car/VF-8/hinh-anh-xe-VinFast-vf8-ngoai-that-mau-xanh-reu-01.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/VF-8/hinh-anh-xe-VinFast-vf8-ngoai-that-mau-trang-01.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/VF-8/hinh-anh-xe-VinFast-vf8-ngoai-that-mau-den-01.webp" },
+      { name: "Đỏ (Crimson Red)", hex: "#b91c1c", img: "https://static-cms-prod.vinfastauto.com/statics/car/VF-8/hinh-anh-xe-VinFast-vf8-ngoai-that-mau-do-01.webp" }
+    ]
   },
   {
     id: "vf-9",
@@ -93,10 +125,18 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 92.610.000 ₫",
     nedc: "626 km",
     seats: "6 - 7 chỗ",
-    img: "assets/images/cars/vinfast-vf-9.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-zenith-grey-desktop.webp",
     badge: "Flagship",
-    highlight: false,
-    desc: "E-SUV hạng sang đầu bảng của VinFast, ghế cơ trưởng massage, tầm hoạt động lên đến 626 km."
+    desc: "E-SUV hạng sang đầu bảng của VinFast, ghế cơ trưởng massage, tầm hoạt động lên đến 626 km.",
+    colors: [
+      { name: "Xám (Zenith Grey)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-zenith-grey-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-infinity-blanc-desktop-20260915.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-jet-black-desktop.webp" },
+      { name: "Bạc (Desat Silver)", hex: "#cbd5e1", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-desat-silver-desktop-20260915.webp" },
+      { name: "Đỏ (Crimson Red)", hex: "#b91c1c", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-solar-ruby-desktop.webp" },
+      { name: "Xanh Rêu (Ivy Green)", hex: "#14532d", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-ivy-green-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf9/hinh-anh-vinfast-vf9-urban-mint-desktop.webp" }
+    ]
   },
   {
     id: "vf-mpv-7",
@@ -109,10 +149,17 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 66.150.000 ₫",
     nedc: "450 km",
     seats: "7 chỗ",
-    img: "assets/images/cars/vinfast-vf-mpv-7.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-xanh-duong-desktop.webp",
     badge: "Mới ra mắt",
-    highlight: false,
-    desc: "Mẫu xe đa dụng 7 chỗ thuần điện rộng rãi, tối ưu cho gia đình nhiều thế hệ."
+    desc: "Mẫu xe đa dụng 7 chỗ thuần điện rộng rãi, tối ưu cho gia đình nhiều thế hệ.",
+    colors: [
+      { name: "Xanh Đại Dương (Moonlit Ocean)", hex: "#1e40af", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-xanh-duong-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-trang-desktop.webp" },
+      { name: "Xám (Zenith Grey)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-xam-desktop.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-den-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-do-desktop.webp" },
+      { name: "Nâu (Introspective Brown)", hex: "#78350f", img: "https://static-cms-prod.vinfastauto.com/statics/car/mpv7/hinh-anh-vinfast-mpv7-exterior-mau-nau-desktop.webp" }
+    ]
   },
   {
     id: "vf-wild",
@@ -125,10 +172,14 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 43.000.000 ₫",
     nedc: "500 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/vf-wild.webp",
+    img: "https://static-cms-prod.vinfastauto.com/vinfast-vf-wild-mau-xam-home.webp",
     badge: "Bán tải điện",
-    highlight: false,
-    desc: "Bán tải điện cỡ trung đột phá với khoang chứa mở rộng linh hoạt và sức kéo ấn tượng."
+    desc: "Bán tải điện cỡ trung đột phá với khoang chứa mở rộng linh hoạt và sức kéo ấn tượng.",
+    colors: [
+      { name: "Xám Titan (Tiêu chuẩn hãng)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/vinfast-vf-wild-mau-xam-home.webp" },
+      { name: "Phiên bản Off-Road Canyon", hex: "#475569", img: "https://static-cms-prod.vinfastauto.com/ext-canyon-19092026.webp" },
+      { name: "Phiên bản Địa Hình Cát", hex: "#d97706", img: "https://static-cms-prod.vinfastauto.com/statics/wild-2026/vh-desert-car.webp" }
+    ]
   },
   {
     id: "vf-2",
@@ -141,10 +192,19 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 11.280.000 ₫",
     nedc: "210 km",
     seats: "4 chỗ",
-    img: "assets/images/cars/vinfast-vf-2.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-xanh-duong-desktop.webp",
     badge: "Siêu tiết kiệm",
-    highlight: false,
-    desc: "Mẫu xe điện đô thị siêu nhỏ gọn, dễ dàng di chuyển và đỗ xe trong mọi ngõ phố."
+    desc: "Mẫu xe điện đô thị siêu nhỏ gọn, dễ dàng di chuyển và đỗ xe trong mọi ngõ phố.",
+    colors: [
+      { name: "Xanh Dương (Sky Blue)", hex: "#2563eb", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-xanh-duong-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-trang-desktop.webp" },
+      { name: "Bạc (Desat Silver)", hex: "#cbd5e1", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-xam-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-do-desktop.webp" },
+      { name: "Vàng (Yellow)", hex: "#eab308", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-vang-desktop.webp" },
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-xanh-mint-desktop.webp" },
+      { name: "Hồng (Rose Pink)", hex: "#f472b6", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-hong-desktop.webp" },
+      { name: "Be (Be Pebble)", hex: "#d6d3d1", img: "https://static-cms-prod.vinfastauto.com/statics/car/vf2/hinh-anh-vinfast-vf2-ngoai-that-mau-be-desktop.webp" }
+    ]
   },
   {
     id: "limo-green",
@@ -157,10 +217,15 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 61.830.000 ₫",
     nedc: "450 km",
     seats: "7 chỗ",
-    img: "assets/images/cars/vinfast-limo-green.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/limo-green/limo-green-color-desat-silver-desktop-20250910.webp",
     badge: "Kinh doanh",
-    highlight: false,
-    desc: "MPV 7 chỗ chuyên dụng chạy dịch vụ cao cấp, thu hồi vốn nhanh, chi phí sạc tối ưu."
+    desc: "MPV 7 chỗ chuyên dụng chạy dịch vụ cao cấp, thu hồi vốn nhanh, chi phí sạc tối ưu.",
+    colors: [
+      { name: "Bạc (Desat Silver)", hex: "#cbd5e1", img: "https://static-cms-prod.vinfastauto.com/statics/car/limo-green/limo-green-color-desat-silver-desktop-20250910.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/limo-green/limo-green-color-infinity-blanc-desktop-20250910.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/limo-green/limo-green-color-jet-black-desktop-20250910.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/limo-green/limo-green-color-solar-ruby-desktop-20250910.webp" }
+    ]
   },
   {
     id: "ec-van",
@@ -173,10 +238,15 @@ const VINFAST_CARS = [
     promoText: "Ưu đãi lên đến 13.400.000 ₫",
     nedc: "150 km",
     seats: "2 chỗ + Khoang hàng",
-    img: "assets/images/cars/vinfast-ec-van.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/ec-van/hinh-anh-vinfast-ec-van-ngoai-that-mau-xanh-mint-deskstop.webp",
     badge: "Chở hàng đô thị",
-    highlight: true,
-    desc: "Xe tải van điện nội đô không lo giờ cấm, giải pháp giao nhận hàng hóa tiết kiệm nhất."
+    desc: "Xe tải van điện nội đô không lo giờ cấm, giải pháp giao nhận hàng hóa tiết kiệm nhất.",
+    colors: [
+      { name: "Xanh Bạc Hà (Urban Mint)", hex: "#6ee7b7", img: "https://static-cms-prod.vinfastauto.com/statics/car/ec-van/hinh-anh-vinfast-ec-van-ngoai-that-mau-xanh-mint-deskstop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/ec-van/hinh-anh-vinfast-ec-van-ngoai-that-mau-trang-deskstop.webp" },
+      { name: "Vàng (Yellow)", hex: "#eab308", img: "https://static-cms-prod.vinfastauto.com/statics/car/ec-van/hinh-anh-vinfast-ec-van-ngoai-that-mau-vang-deskstop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/ec-van/hinh-anh-vinfast-ec-van-ngoai-that-mau-do-deskstop.webp" }
+    ]
   },
   {
     id: "minio-green",
@@ -189,10 +259,20 @@ const VINFAST_CARS = [
     promoText: "Hỗ trợ vay đến 85%",
     nedc: "170 km",
     seats: "4 chỗ",
-    img: "assets/images/cars/minio-green.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-hong-desktop.webp",
     badge: "Green Series",
-    highlight: false,
-    desc: "Xe dịch vụ đô thị cỡ nhỏ chi phí đầu tư thấp nhất, hoàn vốn cực nhanh."
+    desc: "Xe dịch vụ đô thị cỡ nhỏ chi phí đầu tư thấp nhất, hoàn vốn cực nhanh.",
+    colors: [
+      { name: "Hồng Ánh Kim (Rose Metallic)", hex: "#f472b6", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-hong-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-trang-desktop.webp" },
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-den-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-do-desktop.webp" },
+      { name: "Xanh Ngọc (Tropical Jade)", hex: "#34d399", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-xanh-mint-desktop.webp" },
+      { name: "Xanh Ngọc Nóc Trắng", hex: "#34d399", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-xanh-mint-noc-trang-desktop.webp" },
+      { name: "Xanh Ngọc Nóc Vàng", hex: "#34d399", hex2: "#eab308", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-xanh-mint-noc-vang-desktop.webp" },
+      { name: "Đỏ Nóc Trắng", hex: "#dc2626", hex2: "#f8fafc", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-do-noc-trang-desktop.webp" },
+      { name: "Đen Nóc Vàng", hex: "#0f172a", hex2: "#eab308", img: "https://static-cms-prod.vinfastauto.com/statics/car/minio-green/hinh-anh-vinfast-minio-green-exterior-mau-den-noc-vang-desktop.webp" }
+    ]
   },
   {
     id: "herio-green",
@@ -205,10 +285,15 @@ const VINFAST_CARS = [
     promoText: "Hỗ trợ vay đến 85%",
     nedc: "326 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/herio-green.webp",
+    img: "https://static-cms-prod.vinfastauto.com/statics/car/herio-green/hinh-anh-vinfast-herio-green-ngoai-that-mau-den-desktop.webp",
     badge: "Green Series",
-    highlight: false,
-    desc: "Mẫu SUV hạng A tối ưu riêng cho tài xế công nghệ và doanh nghiệp vận tải hành khách."
+    desc: "Mẫu SUV hạng A tối ưu riêng cho tài xế công nghệ và doanh nghiệp vận tải hành khách.",
+    colors: [
+      { name: "Đen (Jet Black)", hex: "#0f172a", img: "https://static-cms-prod.vinfastauto.com/statics/car/herio-green/hinh-anh-vinfast-herio-green-ngoai-that-mau-den-desktop.webp" },
+      { name: "Bạc (Desat Silver)", hex: "#cbd5e1", img: "https://static-cms-prod.vinfastauto.com/statics/car/herio-green/hinh-anh-vinfast-herio-green-ngoai-that-mau-bac-desktop.webp" },
+      { name: "Đỏ (Solar Ruby)", hex: "#dc2626", img: "https://static-cms-prod.vinfastauto.com/statics/car/herio-green/hinh-anh-vinfast-herio-green-ngoai-that-mau-do-desktop.webp" },
+      { name: "Trắng (Infinity Blanc)", hex: "#f1f5f9", img: "https://static-cms-prod.vinfastauto.com/statics/car/herio-green/hinh-anh-vinfast-herio-green-ngoai-that-mau-trang-desktop.webp" }
+    ]
   },
   {
     id: "nerio-green",
@@ -221,9 +306,12 @@ const VINFAST_CARS = [
     promoText: "Hỗ trợ vay đến 85%",
     nedc: "318 km",
     seats: "5 chỗ",
-    img: "assets/images/cars/nerio-green.webp",
+    img: "https://static-cms-prod.vinfastauto.com/vinfast-nerio-green-mau-xam-ngang-home.webp",
     badge: "Green Series",
-    highlight: false,
-    desc: "Khoang hành khách C-SUV rộng rãi, êm ái, lý tưởng cho xe hợp đồng và đưa đón sân bay."
+    desc: "Khoang hành khách C-SUV rộng rãi, êm ái, lý tưởng cho xe hợp đồng và đưa đón sân bay.",
+    colors: [
+      { name: "Xám Titan (Tiêu chuẩn hãng)", hex: "#64748b", img: "https://static-cms-prod.vinfastauto.com/vinfast-nerio-green-mau-xam-ngang-home.webp" },
+      { name: "Phiên bản Dịch vụ Xanh", hex: "#1464f4", img: "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw4819d823/landingpage/vgreen/nerio-green/nerio-green_update_sp.webp" }
+    ]
   }
 ];
