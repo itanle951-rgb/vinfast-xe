@@ -144,11 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     carsGrid.querySelectorAll(".js-quote-car").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const leadCar = document.getElementById("lead-car");
-        if (leadCar) {
-          leadCar.value = btn.dataset.name;
+        if (typeof window.openVinFastPopup === "function") {
+          window.openVinFastPopup(btn.dataset.name);
+        } else {
+          const leadCar = document.getElementById("lead-car");
+          if (leadCar) leadCar.value = btn.dataset.name;
+          document.getElementById("lien-he").scrollIntoView({ behavior: "smooth" });
         }
-        document.getElementById("lien-he").scrollIntoView({ behavior: "smooth" });
       });
     });
   }
@@ -331,4 +333,72 @@ document.addEventListener("DOMContentLoaded", () => {
       leadForm.reset();
     });
   }
+
+  // 7. Popup Nhận Báo Giá & Ưu Đãi
+  const popupOverlay = document.getElementById("vf-popup");
+  const popupClose = document.getElementById("vf-popup-close");
+  const popupCarSelect = document.getElementById("popup-car");
+  const popupForm = document.getElementById("popup-form");
+  const popupFeedback = document.getElementById("popup-feedback");
+
+  if (popupCarSelect) {
+    popupCarSelect.innerHTML = VINFAST_CARS.map(
+      (c) => `<option value="${c.name}">${c.name} (${c.priceText})</option>`
+    ).join("");
+  }
+
+  window.openVinFastPopup = (carName) => {
+    if (!popupOverlay) return;
+    if (carName && popupCarSelect) {
+      popupCarSelect.value = carName;
+    }
+    popupOverlay.classList.add("open");
+    popupOverlay.setAttribute("aria-hidden", "false");
+  };
+
+  const closeVinFastPopup = () => {
+    if (!popupOverlay) return;
+    popupOverlay.classList.remove("open");
+    popupOverlay.setAttribute("aria-hidden", "true");
+    try {
+      sessionStorage.setItem("vf_popup_dismissed", "1");
+    } catch (_) {}
+  };
+
+  document.querySelectorAll(".js-open-popup").forEach((btn) => {
+    btn.addEventListener("click", () => window.openVinFastPopup());
+  });
+
+  if (popupClose) popupClose.addEventListener("click", closeVinFastPopup);
+  if (popupOverlay) {
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) closeVinFastPopup();
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeVinFastPopup();
+  });
+
+  if (popupForm && popupFeedback) {
+    popupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("popup-name").value.trim();
+      const phone = document.getElementById("popup-phone").value.trim();
+      const car = popupCarSelect ? popupCarSelect.value : "VinFast";
+      popupFeedback.style.display = "block";
+      popupFeedback.innerHTML = `✅ Đã nhận yêu cầu của anh/chị <strong>${name}</strong> (${phone}) cho xe <strong>${car}</strong>! Mr. Tùng (0982.068.820) sẽ gửi báo giá lăn bánh tốt nhất ngay.`;
+      popupForm.reset();
+    });
+  }
+
+  // Tự động mở 1 lần sau 6 giây nếu khách chưa tắt trong phiên
+  try {
+    if (!sessionStorage.getItem("vf_popup_dismissed")) {
+      setTimeout(() => {
+        if (popupOverlay && !popupOverlay.classList.contains("open")) {
+          window.openVinFastPopup();
+        }
+      }, 6000);
+    }
+  } catch (_) {}
 });

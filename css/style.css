@@ -1338,3 +1338,133 @@ input[type="range"] {
     bottom: 14px;
   }
 }
+
+/* ==========================================================================
+   POPUP BÁO GIÁ LUXURY OBSIDIAN & GOLD
+   ========================================================================== */
+.vf-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(5, 8, 15, 0.78);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.vf-popup-overlay.open {
+  display: flex;
+  animation: vfFadeIn 0.25s ease;
+}
+
+@keyframes vfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.vf-popup-card {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: linear-gradient(155deg, #0b0f17 0%, #111b2e 100%);
+  color: #f8fafc;
+  border: 1.5px solid rgba(212, 175, 55, 0.65);
+  border-radius: 20px;
+  padding: 26px 24px 20px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.65), 0 0 36px rgba(212, 175, 55, 0.22);
+}
+
+.vf-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f3e5ab;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+}
+
+.vf-popup-close:hover {
+  background: #d4af37;
+  color: #0b0f17;
+}
+
+.vf-popup-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-right: 34px;
+}
+
+.vf-popup-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #f3e5ab;
+  margin-bottom: 3px;
+}
+
+.vf-popup-head h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.vf-popup-perks {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.vf-popup-card .form-group label {
+  color: #e2e8f0;
+  font-size: 0.84rem;
+}
+
+.vf-popup-card .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 175, 55, 0.32);
+  color: #ffffff;
+}
+
+.vf-popup-card .form-control option {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.vf-popup-card .form-control::placeholder {
+  color: #94a3b8;
+}
+
+.vf-popup-foot {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: #f3e5ab;
+}
+
+.vf-popup-foot a:hover {
+  text-decoration: underline;
+}

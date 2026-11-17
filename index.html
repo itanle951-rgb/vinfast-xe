@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20261117b" />
+  <link rel="stylesheet" href="css/style.css?v=20261118" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -86,7 +86,7 @@
           Miễn <strong>100% lệ phí trước bạ</strong>, trả góp tới <strong>85%</strong> duyệt hồ sơ trong ngày. Đủ 14 mẫu xe từ <strong>VF 3, VF 5, VF 7</strong> đến <strong>Limo Green &amp; EC Van</strong> sẵn xe giao ngay — gọi trực tiếp <strong>Mr. Tùng (0982 068 820)</strong> để nhận báo giá lăn bánh thấp nhất hôm nay &amp; lái thử tận nhà.
         </p>
         <div class="hero-cta">
-          <a href="#lien-he" class="btn btn-gold">🔥 Nhận Báo Giá Tốt Nhất Ngay</a>
+          <button type="button" class="btn btn-gold js-open-popup">🔥 Nhận Báo Giá Tốt Nhất Ngay</button>
           <a href="#du-toan" class="btn btn-glass">🧮 Tự Tính Lăn Bánh 30 Giây</a>
         </div>
         <div class="hero-stats">
@@ -419,7 +419,52 @@
     <a href="https://zalo.me/0982068820" target="_blank" rel="noopener" class="float-btn float-zalo">💬 Zalo Mr. Tùng</a>
   </div>
 
-  <script src="js/cars-data.js?v=20261117c"></script>
-  <script src="js/script.js?v=20261117c"></script>
+  <!-- POPUP NHẬN BÁO GIÁ & ƯU ĐÃI -->
+  <div class="vf-popup-overlay" id="vf-popup" aria-hidden="true">
+    <div class="vf-popup-card" role="dialog" aria-modal="true" aria-labelledby="vf-popup-title">
+      <button type="button" class="vf-popup-close" id="vf-popup-close" aria-label="Đóng popup">✕</button>
+
+      <div class="vf-popup-head">
+        <img src="assets/images/logo-vinfast-gold.jpg" alt="Logo VinFast Hà Nội" class="brand-logo-img" />
+        <div>
+          <span class="vf-popup-badge">🎁 ƯU ĐÃI ĐỘC QUYỀN • SỐ 1 NGUYỄN VĂN LINH</span>
+          <h3 id="vf-popup-title">Nhận Báo Giá Lăn Bánh Tốt Nhất</h3>
+        </div>
+      </div>
+
+      <ul class="vf-popup-perks">
+        <li>✓ Miễn <strong>100% lệ phí trước bạ</strong> xe điện</li>
+        <li>✓ Hỗ trợ vay <strong>85%</strong> — chỉ từ <strong>49 triệu</strong> nhận xe</li>
+        <li>✓ Tặng gói phụ kiện &amp; giao xe tận nhà Hà Nội</li>
+      </ul>
+
+      <form id="popup-form">
+        <div class="form-group">
+          <label for="popup-name">Họ và tên anh/chị *</label>
+          <input type="text" id="popup-name" class="form-control" placeholder="Ví dụ: Anh Minh" required />
+        </div>
+        <div class="form-group">
+          <label for="popup-phone">Số điện thoại / Zalo nhận báo giá *</label>
+          <input type="tel" id="popup-phone" class="form-control" placeholder="Nhập SĐT để nhận bảng tính chi tiết" required />
+        </div>
+        <div class="form-group">
+          <label for="popup-car">Dòng xe quan tâm</label>
+          <select id="popup-car" class="form-control"></select>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;padding:13px;">
+          🚀 Gửi Yêu Cầu Nhận Báo Giá Ngay
+        </button>
+      </form>
+
+      <div id="popup-feedback" class="form-feedback"></div>
+
+      <div class="vf-popup-foot">
+        <a href="tel:0982068820">📞 Gọi trực tiếp Mr. Tùng: <strong>0982 068 820</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cars-data.js?v=20261118"></script>
+  <script src="js/script.js?v=20261118"></script>
 </body>
 </html>
